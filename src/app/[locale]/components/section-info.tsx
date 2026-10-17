@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import clsx from 'clsx';
 
+import { assetPath } from '@/utils/assetPath';
 import { info as infoData } from 'app/data/info';
 
 export function SectionInfo() {
@@ -23,10 +24,12 @@ export function SectionInfo() {
         <div className="flex flex-row xl:flex-col gap-6 justify-start items-center xl:items-start">
           <div
             className="portrait-glitch relative w-22 xl:w-32 h-22 xl:h-32"
-            style={{ backgroundImage: `url("${infoData.image.src}")` }}
+            style={{
+              backgroundImage: `url("${assetPath(infoData.image.src)}")`
+            }}
           >
             <Image
-              src={infoData.image.src}
+              src={assetPath(infoData.image.src)}
               alt={infoData.image.alt}
               className="absolute top-0 left-0 z-0 w-full h-full object-contain"
               fill

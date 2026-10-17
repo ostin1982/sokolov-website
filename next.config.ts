@@ -1,6 +1,6 @@
 import type { NextConfig } from "next";
 
-const githubPagesBasePath = process.env.GITHUB_PAGES_BASE_PATH;
+const githubPagesBasePath = process.env.NEXT_PUBLIC_BASE_PATH;
 
 const nextConfig: NextConfig = {
   cacheComponents: !githubPagesBasePath,

@@ -32,7 +32,7 @@ jobs:
       - name: Build Next.js static export
         run: npm run build
         env:
-          GITHUB_PAGES_BASE_PATH: /${{ github.event.repository.name }}
+          NEXT_PUBLIC_BASE_PATH: /${{ github.event.repository.name }}
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

@@ -7,6 +7,7 @@ import Link from 'next/link';
 import Heading from '@/components/common/Heading';
 import Stack from '@/components/common/Stack';
 import { IconArrow } from '@/components/icon/icon-arrow';
+import { assetPath } from '@/utils/assetPath';
 
 import { projects as projectsData } from 'app/data/projects';
 
@@ -30,7 +31,7 @@ export function SectionProjects() {
             >
               <div className="relative w-full h-auto overflow-hidden aspect-[4/3] border border-white-40">
                 <Image
-                  src={images.src}
+                  src={assetPath(images.src)}
                   alt={images.alt}
                   className="absolute top-0 left-0 w-full h-full object-contain"
                   fill
