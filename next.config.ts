@@ -1,16 +1,29 @@
 import type { NextConfig } from "next";
 
+const githubPagesBasePath = process.env.GITHUB_PAGES_BASE_PATH;
+
 const nextConfig: NextConfig = {
-  cacheComponents: true,
-  partialPrefetching: true,
-  async redirects() {
-    return [
-      {
-        source: "/",
-        destination: "/ru",
-        permanent: false,
-      },
-    ];
+  cacheComponents: !githubPagesBasePath,
+  partialPrefetching: !githubPagesBasePath,
+  ...(githubPagesBasePath
+    ? {
+        output: "export" as const,
+        basePath: githubPagesBasePath,
+        trailingSlash: true,
+      }
+    : {
+        async redirects() {
+          return [
+            {
+              source: "/",
+              destination: "/ru",
+              permanent: false,
+            },
+          ];
+        },
+      }),
+  images: {
+    unoptimized: Boolean(githubPagesBasePath),
   },
   turbopack: {
     rules: {
@@ -19,6 +32,13 @@ const nextConfig: NextConfig = {
         as: "*.css",
       },
     },
+    ...(githubPagesBasePath
+      ? {
+          resolveAlias: {
+            "@/utils/helpers": "./src/utils/helpers-static.ts",
+          },
+        }
+      : {}),
   },
 };
 

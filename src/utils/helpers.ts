@@ -1,11 +1,7 @@
-import { addNonBreakingSpaces } from './addNonBreakingSpaces';
-import stripHtmlAttributes from './stripHtmlAttributes';
-import sanitizeHtml from './sanitizeHtml';
+import { processText } from './processText';
 
 export async function defaultProcessText(text: string) {
   'use cache';
 
-  return addNonBreakingSpaces(
-    stripHtmlAttributes(sanitizeHtml(text, [], ['target']), ['class'])
-  );
+  return processText(text);
 }

@@ -1,4 +1,4 @@
-name: Deploy Nuxt to GitHub Pages
+name: Deploy Next.js site to GitHub Pages
 
 on:
   push:
@@ -12,7 +12,7 @@ permissions:
 
 concurrency:
   group: pages
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -25,17 +25,19 @@ jobs:
           node-version: 20
           cache: npm
 
+      - uses: actions/configure-pages@v5
+
       - run: npm ci
 
-      - name: Build Nuxt for GitHub Pages
-        run: npx nuxt build --preset github_pages
+      - name: Build Next.js static export
+        run: npm run build
         env:
-          NUXT_APP_BASE_URL: /sokolov-website/
+          GITHUB_PAGES_BASE_PATH: /${{ github.event.repository.name }}
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./.output/public
+          path: ./out
 
   deploy:
     needs: build
