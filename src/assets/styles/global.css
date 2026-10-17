@@ -1,0 +1,230 @@
+@import 'tailwindcss';
+
+@theme {
+  /* fonts */
+  --font-robotomono: 'RobotoMono', 'Menlo', monospace;
+  /* colors */
+  --color-*: initial;
+  --color-transparent: transparent;
+  --color-current: currentColor;
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-white-20: #ffffff20;
+  --color-white-40: #ffffff40;
+  --color-green: #00de5f;
+  --color-green-40: #00de5f40;
+  --color-green-hover: #36ff8c;
+  /* breakpoints */
+  --breakpoint-2xl: 1440px;
+  --breakpoint-3xl: 1920px;
+}
+
+@font-face {
+  font-family: 'RobotoMono';
+  src: url('../fonts/RobotoMono-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'RobotoMono';
+  src: url('../fonts/RobotoMono-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* custom theme */
+@layer base {
+  :root {
+    /* spacing */
+    --spacing-unit: 0.25rem;
+    --grid-gap: 0.5rem;
+    --font-size-base: 1rem;
+  }
+}
+
+@layer utilities {
+  .gap-7\.5 {
+    gap: calc(var(--grid-gap) * 3.75);
+  }
+
+  .gap-30 {
+    gap: calc(var(--grid-gap) * 15);
+  }
+
+  .grid-default {
+    @apply grid grid-cols-6 xl:grid-cols-12;
+  }
+
+  .wrapper-main {
+    @apply px-5 md:px-10 xl:px-20;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .portrait-glitch {
+    overflow: hidden;
+    background-color: var(--color-black);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow:
+      4px 0 0 var(--color-green),
+      -3px 0 0 #075b2b;
+    transition: box-shadow 100ms steps(2, end);
+  }
+
+  .portrait-glitch::before,
+  .portrait-glitch::after {
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+    background-image: inherit;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    content: '';
+    opacity: 1;
+    pointer-events: none;
+  }
+
+  .portrait-glitch::before {
+    filter: sepia(1) saturate(12) hue-rotate(78deg) brightness(1.15);
+    mix-blend-mode: screen;
+    animation: portrait-glitch-top 620ms steps(2, end) infinite;
+  }
+
+  .portrait-glitch::after {
+    filter: sepia(1) saturate(15) hue-rotate(82deg) contrast(1.5);
+    mix-blend-mode: color-dodge;
+    animation: portrait-glitch-bottom 470ms steps(2, end) infinite reverse;
+  }
+
+  .portrait-glitch:hover {
+    box-shadow: none;
+  }
+
+  .portrait-glitch:hover::before,
+  .portrait-glitch:hover::after {
+    animation: none;
+    opacity: 0;
+  }
+
+  @keyframes portrait-glitch-top {
+    0% {
+      clip-path: inset(18% 0 54% 0);
+      transform: translate(-7px, 1px);
+    }
+
+    25% {
+      clip-path: inset(42% 0 36% 0);
+      transform: translate(6px, -1px);
+    }
+
+    50% {
+      clip-path: inset(63% 0 17% 0);
+      transform: translate(-5px, 2px);
+    }
+
+    75% {
+      clip-path: inset(28% 0 58% 0);
+      transform: translate(7px, 0);
+    }
+
+    100% {
+      clip-path: inset(18% 0 54% 0);
+      transform: translate(-7px, 1px);
+    }
+  }
+
+  @keyframes portrait-glitch-bottom {
+    0% {
+      clip-path: inset(57% 0 20% 0);
+      transform: translate(6px, -2px);
+    }
+
+    25% {
+      clip-path: inset(21% 0 61% 0);
+      transform: translate(-7px, 1px);
+    }
+
+    50% {
+      clip-path: inset(44% 0 38% 0);
+      transform: translate(5px, 2px);
+    }
+
+    75% {
+      clip-path: inset(68% 0 12% 0);
+      transform: translate(-6px, -1px);
+    }
+
+    100% {
+      clip-path: inset(57% 0 20% 0);
+      transform: translate(6px, -2px);
+    }
+  }
+
+  @keyframes pulse-dot {
+    0%,
+    100% {
+      scale: 0.75;
+    }
+
+    50% {
+      scale: 1;
+    }
+  }
+
+  .animate-pulse-dot {
+    animation: pulse-dot 2s ease-in-out infinite;
+  }
+
+  .text-h1 {
+    @apply text-[calc(var(--font-size-base)_*_1.5)] md:text-[calc(var(--font-size-base)_*_2)] xl:text-[calc(var(--font-size-base)_*_2.5)] font-bold leading-[calc(var(--font-size-base)_*_2)] md:leading-[calc(var(--font-size-base)_*_2.5)] xl:leading-[calc(var(--font-size-base)_*_3.625)];
+  }
+
+  .text-h2 {
+    @apply text-[calc(var(--font-size-base)_*_2)] md:text-[calc(var(--font-size-base)_*_2.5)] font-bold leading-[calc(var(--font-size-base)_*_2.5)] md:leading-[calc(var(--font-size-base)_*_3.625)];
+  }
+
+  .text-h3 {
+    @apply text-[calc(var(--font-size-base)_*_1.25)] font-bold leading-[calc(var(--font-size-base)_*_1.75)];
+  }
+
+  .text-p {
+    @apply text-[calc(var(--font-size-base)_*_1)] md:text-[calc(var(--font-size-base)_*_1.25)] xl:text-[calc(var(--font-size-base)_*_1.75)] font-normal leading-[calc(var(--font-size-base)_*_1.5)] md:leading-[calc(var(--font-size-base)_*_1.75)] xl:leading-[calc(var(--font-size-base)_*_3.625)];
+  }
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .animate-pulse-dot {
+    animation: none;
+  }
+
+  .portrait-glitch::before,
+  .portrait-glitch::after {
+    animation: none;
+    opacity: 0;
+  }
+}
+
+body {
+  @apply flex flex-col min-h-screen font-robotomono font-normal text-white bg-black;
+}

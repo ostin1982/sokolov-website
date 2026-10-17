@@ -1,18 +1,13 @@
-import { defineConfig, globalIgnores } from "eslint/config";
-import nextVitals from "eslint-config-next/core-web-vitals";
-import nextTs from "eslint-config-next/typescript";
-
-const eslintConfig = defineConfig([
-  ...nextVitals,
-  ...nextTs,
-  // Override default ignores of eslint-config-next.
-  globalIgnores([
-    // Default ignores of eslint-config-next:
-    ".next/**",
-    "out/**",
-    "build/**",
-    "next-env.d.ts",
-  ]),
-]);
-
-export default eslintConfig;
+module.exports = [
+  {
+    script: "server.js",
+    name: "app",
+    exec_mode: "cluster",
+    instances: 3,
+    env: {
+      NODE_ENV: "production",
+      HOSTNAME: "0.0.0.0",
+      PORT: 3000,
+    },
+  },
+];

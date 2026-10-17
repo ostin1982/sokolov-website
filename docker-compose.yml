@@ -1,0 +1,7 @@
+services:
+  app:
+    container_name: ${APP_NAME:-sokolov-website}
+    image: ${GHCR_PACKAGE_NAME:-sokolov-website:latest}
+    ports:
+      - '127.0.0.1:${APP_PORT:-3000}:3000'
+    restart: always
