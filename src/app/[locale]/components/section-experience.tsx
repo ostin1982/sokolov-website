@@ -26,11 +26,11 @@ export function SectionExperience() {
               key={company ?? `experience-${index}`}
               className={clsx(
                 'relative flex flex-col gap-2.5 pb-10',
-                'before:absolute before:-left-[2.25rem] before:top-[1.875rem] before:h-[calc(100%_-_1.875rem)] before:w-0.5 before:bg-green-40 last:before:hidden'
+                'before:absolute before:-left-9 before:top-7.5 before:h-[calc(100%-1.875rem)] before:w-0.5 before:bg-green-40 last:before:hidden'
               )}
             >
-              <div className="absolute -left-[3rem] -top-0.5 pb-2.5">
-                <IconRound className="w-[1.5625rem] h-[1.5625rem]" />
+              <div className="absolute -left-12 -top-0.5 pb-2.5">
+                <IconRound className="w-6.25 h-6.25" />
               </div>
               <h3 className="text-h3 text-green">{time}</h3>
               <div className="text-p">

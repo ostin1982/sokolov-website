@@ -43,17 +43,17 @@ export async function SectionMain() {
                   'hover:-translate-y-1 hover:bg-green-hover transition-[transform,background-color]'
                 )}
               >
-                <span className="text-[calc(var(--font-size-base)_*_1.25)] md:text-2xl">
+                <span className="text-[calc(var(--font-size-base)*1.25)] md:text-2xl">
                   {title}
                 </span>
-                <IconArrow className="size-[1.125rem] shrink-0" />
+                <IconArrow className="size-4.5 shrink-0" />
               </Link>
             ))}
           </div>
         </div>
         <div className="flex flex-row justify-center items-center gap-2 pb-10 xl:pb-4">
           <p className="text-p">Проекты</p>
-          <IconChevron className="size-[1.5rem] shrink-0" />
+          <IconChevron className="size-6 shrink-0" />
         </div>
       </div>
     </section>
