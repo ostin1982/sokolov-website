@@ -22,8 +22,8 @@ export default function Footer() {
               key={title ?? `information-${index}`}
               className={clsx(
                 'relative',
-                "before:absolute before:top-[calc(50%_+_0.125rem)] before:-right-[0.9375rem] before:size-1 before:-translate-y-1/2 before:rounded-full before:bg-current before:content-['']",
-                'md:before:-right-[1.25rem] xl:before:-right-[1.5rem] xl:before:size-[0.25rem] last:before:hidden'
+                "before:absolute before:top-[calc(50%+0.125rem)] before:-right-3.75 before:size-1 before:-translate-y-1/2 before:rounded-full before:bg-current before:content-['']",
+                'md:before:-right-5 xl:before:-right-6 xl:before:size-1 last:before:hidden'
               )}
             >
               {title}

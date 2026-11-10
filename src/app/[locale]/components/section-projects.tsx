@@ -29,7 +29,7 @@ export function SectionProjects() {
               key={title ?? `project-${index}`}
               className="relative flex flex-col gap-4 h-full"
             >
-              <div className="relative w-full h-auto overflow-hidden aspect-[4/3] border border-white-40">
+              <div className="relative w-full h-auto overflow-hidden aspect-4/3 border border-white-40">
                 <Image
                   src={assetPath(images.src)}
                   alt={images.alt}
@@ -54,7 +54,7 @@ export function SectionProjects() {
                   className="flex w-fit items-center gap-2 text-sm text-green xl:hover:text-green-hover transition-colors duration-300"
                 >
                   <span>Смотреть проект</span>
-                  <IconArrow className="size-[1.125rem] shrink-0" />
+                  <IconArrow className="size-4.5 shrink-0" />
                 </Link>
               )}
             </li>
