@@ -11,7 +11,7 @@ export const projects: IProjects = {
         alt: 'Научные технологии и сервис'
       },
       stacks: [
-        { stack: 'javascript' },
+        { stack: 'JavaScript' },
         { stack: 'php' },
         { stack: 'css' },
         { stack: 'WordPress' },
@@ -33,7 +33,7 @@ export const projects: IProjects = {
         { stack: 'gsap' },
         { stack: 'Swiper' },
         { stack: 'storybook' },
-        { stack: 'strapi' },
+        { stack: 'Strapi' },
         { stack: 'tailwind css' },
         { stack: 'three.js' },
         { stack: 'vite' },
@@ -74,7 +74,7 @@ export const projects: IProjects = {
         { stack: 'Docker' },
         { stack: 'gsap' },
         { stack: 'Swiper' },
-        { stack: 'directus' },
+        { stack: 'Directus' },
         { stack: 'tailwind css' },
         { stack: 'webpack' }
       ],
@@ -113,7 +113,7 @@ export const projects: IProjects = {
         { stack: 'Docker' },
         { stack: 'gsap' },
         { stack: 'Swiper' },
-        { stack: 'directus' },
+        { stack: 'Directus' },
         { stack: 'tailwind css' },
         { stack: 'webpack' },
         { stack: 'zustand' }

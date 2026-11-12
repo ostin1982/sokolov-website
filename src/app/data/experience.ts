@@ -11,10 +11,23 @@ export const experience: IExperience = {
       stacks: [
         { stack: 'React' },
         { stack: 'Next.js' },
+        { stack: 'Vue' },
+        { stack: 'Nuxt.js' },
+        { stack: 'JavaScript' },
         { stack: 'TypeScript' },
+        { stack: 'GSAP' },
+        { stack: 'Swiper' },
+        { stack: 'storybook' },
+        { stack: 'tailwind css' },
+        { stack: 'Three.js' },
+        { stack: 'zustand' },
         { stack: 'Node.js' },
         { stack: 'Express' },
         { stack: 'PostgreSQL' },
+        { stack: 'Directus' },
+        { stack: 'Strapi' },
+        { stack: 'WordPress' },
+        { stack: 'Битрикс 24' },
         { stack: 'Docker' }
       ]
     },
@@ -22,13 +35,24 @@ export const experience: IExperience = {
       time: '2022 - 2023',
       company: 'Вебтехнологии',
       position: 'Web-разработчик',
-      stacks: [{ stack: 'JavaScript' }, { stack: 'WordPress' }]
+      stacks: [
+        { stack: 'JavaScript' },
+        { stack: 'jQuery' },
+        { stack: 'php' },
+        { stack: 'Swiper' },
+        { stack: 'WordPress' }
+      ]
     },
     {
       time: '2021 - 2023',
       company: 'MumiMaps',
       position: 'Web-разработчик',
-      stacks: [{ stack: 'Next.js' }]
+      stacks: [
+        { stack: 'React' },
+        { stack: 'Next.js' },
+        { stack: 'supabase' },
+        { stack: 'netlify' }
+      ]
     }
   ]
 };

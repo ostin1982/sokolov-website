@@ -12,7 +12,11 @@ export const skills: ISkills = {
         { stack: 'React' },
         { stack: 'Next.js' },
         { stack: 'Vue' },
-        { stack: 'TypeScript' }
+        { stack: 'Nuxt.js' },
+        { stack: 'JavaScript' },
+        { stack: 'TypeScript' },
+        { stack: 'jQuery' },
+        { stack: 'tailwind css' }
       ]
     },
     {
@@ -34,7 +38,8 @@ export const skills: ISkills = {
         { stack: 'REST API' },
         { stack: 'Directus' },
         { stack: 'Strapi' },
-        { stack: 'WordPress' }
+        { stack: 'WordPress' },
+        { stack: 'Битрикс 24' }
       ]
     },
     {
