@@ -7,7 +7,7 @@ import {
   SectionAbout,
   SectionSkills,
   SectionExperience
-} from './components';
+} from '../[locale]/components';
 import Footer from '@/components/common/Footer';
 
 export default function HomePage() {
