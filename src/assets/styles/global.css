@@ -118,6 +118,31 @@
     opacity: 0;
   }
 
+  .glitch-404 {
+    position: relative;
+    isolation: isolate;
+    mix-blend-mode: screen;
+  }
+
+  .glitch-404::before,
+  .glitch-404::after {
+    position: absolute;
+    inset: 0;
+    color: var(--color-green);
+    content: attr(data-text);
+    pointer-events: none;
+  }
+
+  .glitch-404::before {
+    mix-blend-mode: screen;
+    animation: portrait-glitch-top 620ms steps(2, end) infinite;
+  }
+
+  .glitch-404::after {
+    mix-blend-mode: color-dodge;
+    animation: portrait-glitch-bottom 470ms steps(2, end) infinite reverse;
+  }
+
   @keyframes portrait-glitch-top {
     0% {
       clip-path: inset(18% 0 54% 0);
@@ -187,6 +212,10 @@
     animation: pulse-dot 2s ease-in-out infinite;
   }
 
+  .text-error {
+    @apply text-[calc(var(--font-size-base)*7.5)] leading-[calc(var(--font-size-base)*7.5)];
+  }
+
   .text-h1 {
     @apply text-[calc(var(--font-size-base)*1.5)] md:text-[calc(var(--font-size-base)*2)] xl:text-[calc(var(--font-size-base)*2.5)] font-bold leading-[calc(var(--font-size-base)*2)] md:leading-[calc(var(--font-size-base)*2.5)] xl:leading-[calc(var(--font-size-base)*3.625)];
   }
@@ -219,7 +248,9 @@ html {
   }
 
   .portrait-glitch::before,
-  .portrait-glitch::after {
+  .portrait-glitch::after,
+  .glitch-404::before,
+  .glitch-404::after {
     animation: none;
     opacity: 0;
   }
