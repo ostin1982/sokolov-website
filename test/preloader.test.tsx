@@ -1,4 +1,5 @@
 import { act, render, screen } from '@testing-library/react';
+import { renderToStaticMarkup } from 'react-dom/server';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 
 import Preloader from '@/components/ui/preloader';
@@ -18,6 +19,12 @@ afterEach(() => {
 });
 
 describe('Preloader', () => {
+  it('renders the preloader in the initial server HTML', () => {
+    const markup = renderToStaticMarkup(<Preloader />);
+
+    expect(markup).toContain('role="progressbar"');
+  });
+
   it('shows progress in 5% steps until the page loads, then reaches 100% and hides', () => {
     vi.useFakeTimers();
     Object.defineProperty(document, 'readyState', {

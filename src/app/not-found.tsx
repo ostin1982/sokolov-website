@@ -16,7 +16,7 @@ export default function NotFound() {
         </h1>
         <p className="text-[1.75rem] max-w-xl">страница не найдена</p>
         <Link
-          href="/ru"
+          href="/"
           className={clsx(
             'text-p text-center text-black bg-green w-58 py-2',
             'flex flex-row justify-center items-center gap-3',

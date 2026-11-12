@@ -11,17 +11,7 @@ const nextConfig: NextConfig = {
         basePath: githubPagesBasePath,
         trailingSlash: true,
       }
-    : {
-        async redirects() {
-          return [
-            {
-              source: "/",
-              destination: "/ru",
-              permanent: false,
-            },
-          ];
-        },
-      }),
+    : {}),
   images: {
     unoptimized: Boolean(githubPagesBasePath),
   },

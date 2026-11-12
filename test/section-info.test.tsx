@@ -3,7 +3,7 @@ import { resolve } from 'node:path';
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 
-import { SectionInfo } from '@/app/[locale]/components/section-info';
+import { SectionInfo } from '@/app/components/section-info';
 
 const globalStyles = readFileSync(
   resolve(process.cwd(), 'src/assets/styles/global.css'),

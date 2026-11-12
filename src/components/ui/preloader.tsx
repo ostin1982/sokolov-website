@@ -4,15 +4,13 @@ import { useEffect, useState } from 'react';
 
 export default function Preloader() {
   const [progress, setProgress] = useState(0);
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
     let intervalId: number | undefined;
     let hideTimeoutId: number | undefined;
     let currentProgress = 0;
     let isLoaded = document.readyState === 'complete';
-
-    setIsVisible(true);
 
     const advanceProgress = () => {
       if (!isLoaded && currentProgress >= 90) {

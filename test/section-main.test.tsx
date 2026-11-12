@@ -3,7 +3,7 @@ import { render } from '@testing-library/react';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 import CursorGlow from '@/components/ui/cursor-glow';
-import { SectionMain } from '@/app/[locale]/components/section-main';
+import { SectionMain } from '@/app/components/section-main';
 
 const bounds = {
   left: 10,
