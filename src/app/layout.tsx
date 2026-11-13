@@ -7,6 +7,7 @@ const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
 const faviconUrl = (file: string) => `${basePath}/favicon/${file}`;
 
 export const metadata: Metadata = {
+  title: 'Соколов Денис. Fullstack',
   icons: {
     icon: [
       { url: faviconUrl('favicon.ico'), type: 'image/x-icon' },
