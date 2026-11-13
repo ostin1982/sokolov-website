@@ -4,10 +4,24 @@ import 'styles/global.css';
 import Preloader from '@/components/ui/preloader';
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://ostin1982.github.io';
 const faviconUrl = (file: string) => `${basePath}/favicon/${file}`;
+const openGraphImageUrl = new URL(
+  `${basePath}/images-mock/OG.png`,
+  siteUrl
+).toString();
 
 export const metadata: Metadata = {
   title: 'Соколов Денис. Fullstack',
+  openGraph: {
+    images: [
+      {
+        url: openGraphImageUrl,
+        width: 4044,
+        height: 2190
+      }
+    ]
+  },
   icons: {
     icon: [
       { url: faviconUrl('favicon.ico'), type: 'image/x-icon' },
