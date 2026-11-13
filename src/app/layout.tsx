@@ -27,8 +27,12 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
+      {
+        url: faviconUrl('favicon-glitch.svg?v=2'),
+        type: 'image/svg+xml',
+        sizes: 'any'
+      },
       { url: faviconUrl('favicon.ico'), type: 'image/x-icon' },
-      { url: faviconUrl('favicon.svg'), type: 'image/svg+xml' },
       {
         url: faviconUrl('favicon-16x16.png'),
         sizes: '16x16',
