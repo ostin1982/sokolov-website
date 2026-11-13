@@ -4,7 +4,8 @@ import 'styles/global.css';
 import Preloader from '@/components/ui/preloader';
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://ostin1982.github.io';
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ?? 'https://ostin1982.github.io';
 const faviconUrl = (file: string) => `${basePath}/favicon/${file}`;
 const openGraphImageUrl = new URL(
   `${basePath}/images-mock/OG.png`,
@@ -13,6 +14,8 @@ const openGraphImageUrl = new URL(
 
 export const metadata: Metadata = {
   title: 'Соколов Денис. Fullstack',
+  description:
+    'Я fullstack-разработчик с 5-летним коммерческим опытом. Создаю современные сайты и веб-интерфейсы, уделяя особое внимание дизайну, анимации и интерактивности. Работал над проектами для креативных агентств — от промосайтов с 3D-графикой до веб-приложений с CMS и серверной логикой. До разработки занимался редакторской работой и аналитикой, что научило меня системно мыслить и понимать задачи бизнеса. Сейчас хочу применять свой опыт не только в креативной разработке, но и в создании сложных цифровых продуктов.',
   openGraph: {
     images: [
       {
