@@ -13,7 +13,7 @@ const openGraphImageUrl = new URL(
 ).toString();
 
 export const metadata: Metadata = {
-  title: 'Соколов Денис. Fullstack',
+  title: 'Денис Соколов. Fullstack-разработчик',
   description:
     'Я fullstack-разработчик с 5-летним коммерческим опытом. Создаю современные сайты и веб-интерфейсы, уделяя особое внимание дизайну, анимации и интерактивности. Работал над проектами для креативных агентств — от промосайтов с 3D-графикой до веб-приложений с CMS и серверной логикой. До разработки занимался редакторской работой и аналитикой, что научило меня системно мыслить и понимать задачи бизнеса. Сейчас хочу применять свой опыт не только в креативной разработке, но и в создании сложных цифровых продуктов.',
   openGraph: {
@@ -27,11 +27,6 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      {
-        url: faviconUrl('favicon-glitch.svg?v=2'),
-        type: 'image/svg+xml',
-        sizes: 'any'
-      },
       { url: faviconUrl('favicon.ico'), type: 'image/x-icon' },
       {
         url: faviconUrl('favicon-16x16.png'),
@@ -72,6 +67,11 @@ export const metadata: Metadata = {
         url: faviconUrl('android-chrome-512x512.png'),
         sizes: '512x512',
         type: 'image/png'
+      },
+      {
+        url: faviconUrl('favicon-glitch.svg?v=3'),
+        type: 'image/svg+xml',
+        sizes: 'any'
       }
     ],
     apple: [
